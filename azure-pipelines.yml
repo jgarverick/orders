@@ -28,14 +28,15 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: Maven@3
-      displayName: Maven build
-      inputs:
-       options: -DskipTests build
+    
     - task: Maven@3
       displayName: Maven package
       inputs:
         options: -DskipTests package
+    - task: Bash@3
+      displayName: Build
+      inputs:
+       filePath: ./scripts/build.sh
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
