@@ -14,3 +14,5 @@ spec:
           image: mmiprepo.azurecr.io/orders
           ports:
           - containerPort: 80
+      imagePullSecrets:
+        - name: mmiprepo-pullsecret
