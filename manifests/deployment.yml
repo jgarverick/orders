@@ -14,5 +14,13 @@ spec:
           image: mmiprepo.azurecr.io/orders
           ports:
           - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /browser/index.html
+              port: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
       imagePullSecrets:
         - name: mmiprepo-pullsecret
