@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '4daf7d3b-504f-41d7-a80e-6f7dd049fe04'
-  imageRepository: 'orders'
+  imageRepository: 'mmiprepo/orders'
   containerRegistry: 'mmiprepo.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/docker/orders/Dockerfile'
   tag: '$(Build.BuildId)'
